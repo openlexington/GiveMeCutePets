@@ -27,6 +27,12 @@ gem 'dotenv'
 gem 'hpricot'
 gem 'rake'
 
+# Twitter Stream
+gem 'tweetstream'
+
+# Foreman
+gem 'foreman'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
