@@ -2,6 +2,7 @@
  
 require 'twitter'
 require 'dotenv'
+require './lib/cute_pets'
 Dotenv.load
 
 config = {
@@ -11,6 +12,21 @@ config = {
   access_token_secret: ENV['access_token_secret']
 }
 
-rClient = Twitter::REST::Client.new config
- 
-rClient.update("a third test")
+while true
+
+  rClient = Twitter::REST::Client.new config
+  sClient = Twitter::Streaming::Client.new config
+
+  sClient.user do |object|
+    case object
+    when Twitter::Tweet
+      begin
+        zip = object.full_text.split(' ')[1]
+        tweet_id = object.id
+        CutePets.post_pet(zip, tweet_id)
+      rescue
+        sleep 10
+      end
+    end
+  end
+end
