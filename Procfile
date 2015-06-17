@@ -1,0 +1,1 @@
+give_me_cute_pets: ruby ./give_me_cute_pets.rb
