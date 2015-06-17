@@ -21,10 +21,13 @@ while true
     case object
     when Twitter::Tweet
       begin
+        puts 'Receiving tweet...'
         zip = object.full_text.split(' ')[1]
         tweet_id = object.id
+        puts 'Sending tweet...'
         CutePets.post_pet(zip, tweet_id)
       rescue
+        puts 'Error'
         sleep 10
       end
     end
