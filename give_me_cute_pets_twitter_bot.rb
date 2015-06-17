@@ -13,6 +13,7 @@ config = {
 }
 
 while true
+  puts 'Starting...'
 
   rClient = Twitter::REST::Client.new config
   sClient = Twitter::Streaming::Client.new config
