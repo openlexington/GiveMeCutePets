@@ -1,1 +1,1 @@
-give_me_cute_pets: ruby ./give_me_cute_pets_twitter_bot.rb
+give_me_cute_pets: irb ./give_me_cute_pets_twitter_bot.rb
